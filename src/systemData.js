@@ -207,12 +207,15 @@ export var emails = [
 
 export var emailsToInfo = {
     "admin@mail.com": {
-        "lists": {
-            "dateNight": [
-                "Halloween",
-                "Step Brothers",
-            ]
-        },
+        "lists": [
+            {
+                "name": "dateNight",
+                "movies": [
+                    "Halloween",
+                    "Step Brothers",
+                ]
+            }
+        ],
         "friends": [
             "testUser"
         ],
@@ -228,16 +231,22 @@ export var emailsToInfo = {
         "email": "admin@mail.com"
     },
     "test@mail.com": {
-        "lists": {
-            "Action": [
-                "Iron Man",
-            ],
-            "Favs": [
-                "Step Brothers",
-                "Star Wars: Episode IV - A New Hope",
-                "Ocean's Eleven"
-            ]
-        },
+        "lists":[
+            {
+                "name": "Action",
+                "movies": [
+                    "Iron Man",
+                ],
+            },
+            {
+                "name": "Favs",
+                "movies": [
+                    "Step Brothers",
+                    "Star Wars: Episode IV - A New Hope",
+                    "Ocean's Eleven"
+                ]
+            }
+        ],
         "friends": [
             "admin"
         ],

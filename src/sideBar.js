@@ -48,7 +48,7 @@ class SideBar extends React.Component {
             <div>
                 <Drawer classes={{ paper: classes.paper }} anchor="right" open={this.state.open} onClose={this.handleDrawerClose}>
                     <List className={classes.options}>
-                        {['Home', 'Account', 'Settings'].map((text) => (
+                        {['Home', 'Profile', 'Settings', 'Sign Out'].map((text) => (
                             <ListItem button className={classes.option} key={text}>
                                 <ListItemText className={classes.option} disableTypography 
                                     primary={<Typography className={classes.optionText}>{text}</Typography>} 
