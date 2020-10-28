@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import CinematchBar from './cinematchBar';
 import HomeViewing from './showMovies';
+import Landing from './SignIn';
 import './App.css';
 
 // function App() {
@@ -19,11 +20,10 @@ function App() {
   return (
     <Router>
       <div>
-        <CinematchBar signInStatus={true} />
 
-        {/**Route for the login page should go here */}
+        <Route exact path="/landing" component={Landing} signInStatus={false}/>
         <Route exact path="/" render={(props) => (<p></p>)} />
-        <Route exact path="/homeViewing" component={HomeViewing} />
+        <Route exact path="/homeViewing" component={HomeViewing} />       
       </div>
     </Router>
   );
