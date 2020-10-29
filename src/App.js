@@ -4,6 +4,7 @@ import CinematchBar from './cinematchBar';
 import HomeViewing from './showMovies';
 import Landing from './SignIn';
 import './App.css';
+import GuestCode from './GuestCode';
 
 // function App() {
 //   return (
@@ -20,9 +21,9 @@ function App() {
   return (
     <Router>
       <div>
-
         <Route exact path="/landing" component={Landing} signInStatus={false}/>
         <Route exact path="/" render={(props) => (<p></p>)} />
+        <Route exact path="/guestcode" component={GuestCode} signInStatus={false}/>
         <Route exact path="/homeViewing" component={HomeViewing} />       
       </div>
     </Router>
