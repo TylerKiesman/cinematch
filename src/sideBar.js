@@ -4,7 +4,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import { withStyles } from "@material-ui/core/styles";
-import Typography from '@material-ui/core/Typography';
+import { Link } from 'react-router-dom';
 
 
 const styles = theme => ({
@@ -19,7 +19,9 @@ const styles = theme => ({
         fontFamily: [
             'Trebuchet MS',
             'sans-serif',
-        ].join(',')
+        ].join(','),
+        color: 'white',
+        textDecoration: 'none'
     },
     paper: {
         background: "black"
@@ -48,13 +50,26 @@ class SideBar extends React.Component {
             <div>
                 <Drawer classes={{ paper: classes.paper }} anchor="right" open={this.state.open} onClose={this.handleDrawerClose}>
                     <List className={classes.options}>
-                        {['Home', 'Profile', 'Settings', 'Sign Out'].map((text) => (
-                            <ListItem button className={classes.option} key={text}>
-                                <ListItemText className={classes.option} disableTypography 
-                                    primary={<Typography className={classes.optionText}>{text}</Typography>} 
-                                />
-                            </ListItem>
-                        ))}
+                        <ListItem className={classes.option} key="Home">
+                            <ListItemText className={classes.option} 
+                                primary={<Link className={classes.optionText} to="/homeViewing" onClick={this.handleDrawerClose}>Home</Link>} 
+                            />
+                        </ListItem>
+                        <ListItem className={classes.option} key="Profile">
+                            <ListItemText className={classes.option} 
+                                primary={<Link className={classes.optionText} to="/homeViewing" onClick={this.handleDrawerClose}>Profile</Link>} 
+                            />
+                        </ListItem>
+                        <ListItem className={classes.option} key="Settings">
+                            <ListItemText className={classes.option} 
+                                primary={<Link className={classes.optionText} to="/homeViewing" onClick={this.handleDrawerClose}>Settings</Link>} 
+                            />
+                        </ListItem>
+                        <ListItem className={classes.option} key="Sign Out">
+                            <ListItemText className={classes.option} 
+                                primary={<Link className={classes.optionText} to="/" onClick={this.handleDrawerClose}>Sign Out</Link>} 
+                            />
+                        </ListItem>
                     </List>
                 </Drawer>
             </div>

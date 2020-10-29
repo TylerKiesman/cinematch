@@ -21,8 +21,8 @@ function App() {
   return (
     <Router>
       <div>
-        <Route exact path="/landing" component={Landing} signInStatus={false}/>
-        <Route exact path="/" render={(props) => (<p></p>)} />
+        {bar}
+        <Route exact path="/" component={Landing} signInStatus={false}/>
         <Route exact path="/guestcode" component={GuestCode} signInStatus={false}/>
         <Route exact path="/homeViewing" component={HomeViewing} />       
       </div>

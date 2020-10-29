@@ -2,7 +2,7 @@ import React from 'react';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from "@material-ui/core/styles";
-import { FormControl, Input, InputLabel, Button, Menu, MenuItem } from '@material-ui/core';
+import { FormControl, Input, InputLabel, Button, Menu, MenuItem, AppBar } from '@material-ui/core';
 import './SignIn.css';
 import {
     BrowserRouter as Router,
@@ -10,22 +10,24 @@ import {
     Route,
     Link
   } from "react-router-dom";
+  import { ThemeProvider } from '@material-ui/styles';
+  import { createMuiTheme } from '@material-ui/core/styles';
 
 
 
 const styles = theme => ({
-    movieRoot: {
+    loginRoot: {
+        paddingTop: '2%',
         flexGrow: 1,
     },
     headerPaper: {
-        backgroundColor: "#c393f0",
         padding: theme.spacing(2),
         textAlign: 'center',
         color: 'white',
-        borderColor: '#c393f0',
-        border: '1px solid',
         fontSize: 20,   
-        fontWeight: 500
+        fontWeight: 500,
+        margin: 0,
+        width: '100%',
     },
     headers: {
         paddingTop: '1.5%',
@@ -40,13 +42,30 @@ const styles = theme => ({
     },
     login: {
         color: 'white',
-        paddingLeft : 200,
-        paddingTop : 100
+        borderColor: 'white'
     },
     guestcode : {
         paddingRight : 200,
+        textDecoration: 'none',
+        color : 'white',
+        border: '3px solid #8a2be2',
+        borderRadius: "3px",
+        backgroundColor: 'black',
+        marginBottom: '3%'
+    },
+    guestLink: { 
+        textDecoration: 'none',
+        color : 'white',
+    },
+    fakeLogin: {
+        color: 'white',
+        textDecoration: 'none',
+        border: '1px solid white',
+        padding: '2px',
+        borderRadius: '6px'
     }
 });
+
 
 class Landing extends React.Component{
     constructor(props){
@@ -66,44 +85,56 @@ class Landing extends React.Component{
     }
 
     render(){
-        console.log("Landing Page");
+        const addWhite = createMuiTheme({
+            palette: {
+                primary: {
+                // light: will be calculated from palette.primary.main,
+                    main: '#ffffff',
+                // dark: will be calculated from palette.primary.main,
+                // contrastText: will be calculated to contrast with palette.primary.main
+                },
+              type: 'dark'
+            },
+        });
         const { classes } = this.props;
         return (
-            <div color='#c393f0' width='100%' height='100%'>
-                <div className={classes.movieRoot}>
+            <div>
+                <AppBar/>
+                <div className={classes.loginRoot}>
                     <Grid container className={classes.headerPaper} spacing={3} justify="center" alignItems='center' direction='column'>
-                        <Grid item key="title" xs={5}>
-                            <Paper className={classes.headerPaper} variant="outlined"><b>Cinematch</b></Paper>
-                        </Grid>
 
                         <Grid item className={classes.guestcode}>
-                            <Link to="/guestcode" style={{ textDecoration: 'none', color : 'white' }}>
+                            <Link to="/guestcode" className={classes.guestLink}>
                                 <MenuItem>Enter Guest Code</MenuItem>
                             </Link>
                         </Grid>
+                        <ThemeProvider theme={addWhite}>
+                            <Grid item>
+                                <FormControl alignItems='center'>
+                                    <InputLabel htmlFor="my-input">Email address</InputLabel>
+                                    <Input id="email" aria-describedby="emailtxt" />
+                                </FormControl>  
+                            </Grid>
 
-                        <Grid item>
-                            <FormControl alignItems='center'>
-                                <InputLabel htmlFor="my-input">Email address</InputLabel>
-                                <Input id="email" aria-describedby="emailtxt" />
-                            </FormControl>  
-                        </Grid>
-
-                        <Grid item>
-                            <FormControl alignItems='center'>
-                                <InputLabel htmlFor="my-input">Password</InputLabel>
-                                <Input id="pw" aria-describedby="pwtext" />
-                            </FormControl> 
-                        </Grid>
-                        
-                        <Button onClick={() => { alert('login') }} className="login" variant="outlined">Log In</Button>
-
+                            <Grid item>
+                                <FormControl alignItems='center'>
+                                    <InputLabel htmlFor="my-input">Password</InputLabel>
+                                    <Input id="pw" aria-describedby="pwtext" />
+                                </FormControl> 
+                            </Grid>
+                            
+                            {/**TODO: Make Login actually work, for now log in as admin not matter what */}
+                            {/* <Button onClick={() => { alert('login') }} className={classes.login} variant="outlined">Log In</Button> */}
+                            <Link to="/homeViewing" className={classes.fakeLogin}>
+                                <MenuItem>Log In</MenuItem>
+                            </Link>
+                        </ThemeProvider>
                         <Grid item>
                             <div>
                                 <p3>
                                     Don't have an account?
                                 </p3>
-                                <Button>Sign Up</Button>
+                                <Button className={classes.login}><u>Sign Up</u></Button>
                             </div>
                         </Grid>
                         
