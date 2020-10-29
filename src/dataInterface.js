@@ -2,13 +2,22 @@ import * as db from './systemData';
 
 export function generateNewList(email, listName){
     var created =  "Created a new list called " + listName;
-    db.emailsToInfo[email].lists[listName] = [];
+    db.emailsToInfo[email].lists.push({
+        "name": listName,
+        "movies": []
+    });
     db.emailsToInfo[email].history.push(created);
 }
 
-export function addMovieToList(email, listname, movieName){
+export function addMovieToList(email, listName, movieName){
     var created = "Liked the movie " + movieName;
-    db.emailsToInfo[email].lists[listname].push(movieName);
+    var i;
+    var lists = db.emailsToInfo[email].lists;
+    for(i=0; i<lists.length; i++){
+        if(lists[i].name === listName){
+            lists[i].movies.push(movieName);
+        }
+    }
     db.emailsToInfo[email].history.push(created);
 }
 

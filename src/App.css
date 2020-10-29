@@ -1,3 +1,15 @@
 html {
   background-color: #262626;
 }
+
+li[id='Hulu']{
+  background-color: green;
+}
+
+li[id='Netflix']{
+  background-color: red;
+}
+
+li[id='Amazon Prime Video']{
+  background-color: blue;
+}
