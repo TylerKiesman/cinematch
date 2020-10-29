@@ -1,4 +1,13 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Cinematch (A SWEN-444 Project)
+
+## WARNING:
+This project doesn't have a working sign in feature or guest feature yet! When you sign up or sign in you're automatically signed in to be
+a fake user that we have preset. When you sign in as a guest using a code you'll just be brought to a regular screen for viewing movies like a 
+regular user. Given that we only had a week to code we didn't have the time to implement a feature where you could view movies as a guest with another user
+in real time. We also didn't have time to implement a feature that would keep track of who's signed in and restrict pages to signed in users. Along with this there's only about seven preset movies that users can view.
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).<br />
+In order to run this project you must install Node.JS!
 
 ## Available Scripts
 
@@ -66,11 +75,3 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-# cinematch
-
-SWEN 444 Project Repo
-
-Tyler
-Raavi
-Jake
-Prionti
