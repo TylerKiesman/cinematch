@@ -57,7 +57,7 @@ class SideBar extends React.Component {
                         </ListItem>
                         <ListItem className={classes.option} key="Profile">
                             <ListItemText className={classes.option} 
-                                primary={<Link className={classes.optionText} to="/homeViewing" onClick={this.handleDrawerClose}>Profile</Link>} 
+                                primary={<Link className={classes.optionText} to="/profile" onClick={this.handleDrawerClose}>Profile</Link>} 
                             />
                         </ListItem>
                         <ListItem className={classes.option} key="Settings">

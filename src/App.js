@@ -32,7 +32,7 @@ function App() {
         <Route exact path="/setup" component={AccountSetup}/>
         <Route exact path="/lists" component={AccountLists}/>
         <Route exact path="/homeViewing" component={HomeViewing} />
-        <Route exact path="/profile" component={() => <UserProfile user={"test@mail.com"} />} />
+        <Route exact path="/profile" component={() => <UserProfile user={"admin@mail.com"} />} />
         <Route exact path="/friend" component={() => <FriendProfile user={"admin@mail.com"} />} />       
       
     

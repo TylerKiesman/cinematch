@@ -1,13 +1,24 @@
 # Cinematch (A SWEN-444 Project)
 
-## WARNING:
-This project doesn't have a working sign in feature or guest feature yet! When you sign up or sign in you're automatically signed in to be
-a fake user that we have preset. When you sign in as a guest using a code you'll just be brought to a regular screen for viewing movies like a 
-regular user. Given that we only had a week to code we didn't have the time to implement a feature where you could view movies as a guest with another user
-in real time. We also didn't have time to implement a feature that would keep track of who's signed in and restrict pages to signed in users. Along with this there's only about seven preset movies that users can view.
+## WHATS NOT WORKING:
+- Sign in: When you sign in no matter what you put in you'll always be our preset 'admin' user. When you sign up, you'll also still be set as 
+that 'admin' user although your account will be stored. We couldn't implement a feature to where the app keeps track of who's signed in.
+<br/>
+- Guest: When you go to sign in as a guest and enter any code you'll just be brought to the screen of viewing movies like a normal user. This 
+feature of viewing movies in real time with another logged in user we found difficult so we hadn't yet implemented that.
+<br/>
+- Movies: There's only about 7 movies in the system. We didn't have time to figure out a full API to grab the data so we just preset some movie data.
+<br/>
+- Friends: We didn't have time to implement a button to add friends, you just have to look at the one we had preset.
+<br/>
+*Along with all this some of the actions you do won't show up in other parts (if you like a movie it won't show up in your lists). There is a bunch of preset data however so you could get a view of what it would look like if you had done some of these actions.
+
+
+## Setup:
+Install Node.JS and import the proper packages needed to run with npm. Then use a command like 'npm start' to run the application.
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).<br />
-In order to run this project you must install Node.JS!
 
 ## Available Scripts
 
