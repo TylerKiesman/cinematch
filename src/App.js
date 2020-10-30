@@ -7,6 +7,8 @@ import './App.css';
 import AccountSetup from './accountSetup';
 import AccountLists from './accountLists';
 import GuestCode from './GuestCode';
+import UserProfile from './userProfile';
+import FriendProfile from './friendProfile';
 
 // function App() {
 //   return (
@@ -29,7 +31,11 @@ function App() {
         <Route exact path="/settings" component={()=>(<AccountSetup signedUp />)}/>
         <Route exact path="/setup" component={AccountSetup}/>
         <Route exact path="/lists" component={AccountLists}/>
-        <Route exact path="/homeViewing" component={HomeViewing} />       
+        <Route exact path="/homeViewing" component={HomeViewing} />
+        <Route exact path="/profile" component={() => <UserProfile user={"test@mail.com"} />} />
+        <Route exact path="/friend" component={() => <FriendProfile user={"admin@mail.com"} />} />       
+      
+    
       </div>
     </Router>
   );

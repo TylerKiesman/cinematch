@@ -205,6 +205,14 @@ export var emails = [
     "testUser"
 ];
 
+export var nameToEmail = {
+    "admin": {
+        "email": "admin@mail.com"
+    },
+    "testUser": {
+        "email": "test@mail.com"
+    }
+};
 export var emailsToInfo = {
     "admin@mail.com": {
         "lists": [
@@ -225,7 +233,6 @@ export var emailsToInfo = {
         "dislikedGenres": ["Romance"],
         "likedMovies": [],
         "dislikedMovies": [],
-        "friends": ["testUser"],
         "history": [],
         "guestCode": "admin",
         "email": "admin@mail.com"
@@ -239,7 +246,31 @@ export var emailsToInfo = {
                 ],
             },
             {
-                "name": "Favs",
+                "name": "Rewatchables",
+                "movies": [
+                    "Iron Man",
+                ],
+            },
+            {
+                "name": "Sappy",
+                "movies": [
+                    "Iron Man",
+                ],
+            },
+            {
+                "name": "Retro",
+                "movies": [
+                    "Iron Man",
+                ],
+            },
+            {
+                "name": "Horror",
+                "movies": [
+                    "Iron Man",
+                ],
+            },
+            {
+                "name": "Faves",
                 "movies": [
                     "Step Brothers",
                     "Star Wars: Episode IV - A New Hope",
@@ -256,7 +287,6 @@ export var emailsToInfo = {
         "dislikedGenres": ["Romance"],
         "likedMovies": [],
         "dislikedMovies": [],
-        "friends": ["testUser"],
         "history": [
             'Liked the movie Step "Brothers"',
             'Created a new list named "Favs"'

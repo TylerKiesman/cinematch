@@ -36,6 +36,10 @@ export function getUserInfo(email){
     return db.emailsToInfo[email];
 }
 
+export function getUserInfoByName(name){
+    return db.nameToEmail[name];
+}
+
 export function getUserLists(email){
     return db.emailsToInfo[email].lists;
 }
