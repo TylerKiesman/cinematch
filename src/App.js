@@ -4,6 +4,8 @@ import CinematchBar from './cinematchBar';
 import HomeViewing from './showMovies';
 import Landing from './SignIn';
 import './App.css';
+import AccountSetup from './accountSetup';
+import AccountLists from './accountLists';
 import GuestCode from './GuestCode';
 
 // function App() {
@@ -24,6 +26,8 @@ function App() {
         {bar}
         <Route exact path="/" component={Landing} signInStatus={false}/>
         <Route exact path="/guestcode" component={GuestCode} signInStatus={false}/>
+        <Route exact path="/setup" component={AccountSetup}/>
+        <Route exact path="/lists" component={AccountLists}/>
         <Route exact path="/homeViewing" component={HomeViewing} />       
       </div>
     </Router>
