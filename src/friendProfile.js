@@ -112,7 +112,7 @@ class FriendProfile extends React.Component {
                     alignItems: "center", justify: "center"}}>
                     <CardMedia style={{height: 10, width: 250, paddingTop: '30%'}}
                     image={dp} title="lorem ipsum"/>
-                        <p style={{color: "white", paddingLeft: 85}}><b>{userInfo.name}</b></p>
+                        <p style={{color: "white", paddingLeft: 100}}><b>{userInfo.name}</b></p>
                     </Grid>
                     <Grid item key="summary" xs={5}>
                         <Paper className={classes.headerPaper}><b>Movie Lists</b></Paper>
