@@ -1,6 +1,47 @@
 import React from 'react';
+import {addNewUser, getChecksLiked} from "./dataInterface";
+import {Email} from "@material-ui/icons";
+import * as db from "./systemData";
 
 class AccountSetup extends React.Component{
+
+    getChecksLiked = () => {
+        let checks = document.getElementsByClassName('form-check-inline1');
+        let arry = [];
+        for (let i = 0; i < 21; i++) {
+            if (checks[i].checked === true) {
+                arry += checks[i].value;
+            }
+        }
+        return arry
+    }
+
+    getChecksDisliked = () => {
+        let checks = document.getElementsByClassName('form-check-inline');
+        let arry = [];
+        for(let i = 0; i < 21; i++) {
+            if (checks[i].checked === true){
+                arry += checks[i].value;
+            }
+        }
+        return arry
+    }
+
+    addNewUser = (email, name, password, likedGenres, dislikedGenres, likedMovies, dislikedMovies) => {
+        db.emailsToInfo[email] = {
+            "lists": [],
+            "name": name,
+            "password": password,
+            "likedGenres": [],
+            "dislikedGenres": [],
+            "likedMovies": likedMovies,
+            "dislikedMovies": dislikedMovies,
+            "friends": [],
+            "history": [],
+            "guestCode": "code",
+            "email": email
+    }
+}
     render(){ 
         return (
             <body style={{backgroundColor: "#262626"}}>
@@ -27,14 +68,14 @@ class AccountSetup extends React.Component{
                 <div class="checkbox bg-#262626 text-white col-xs-4">
                     <div class="control-group">
                         <p>Movie genres you like:<br/></p>
-                        <div class="form-check-inline">
-                            <label class="form-check-inline"><input type="checkbox" value="Action"/>Action</label>
-                            <label class="form-check-inline"><input type="checkbox" value="Adventure"/>Adventure</label>
-                            <label class="form-check-inline"><input type="checkbox" value="Comedy"/>Comedy</label>
-                            <label class="form-check-inline"><input type="checkbox" value="Crime"/>Crime</label>
-                            <label class="form-check-inline"><input type="checkbox" value="Drama"/>Drama</label>
-                            <label class="form-check-inline"><input type="checkbox" value="Fantasy"/>Fantasy</label>
-                            <label class="form-check-inline"><input type="checkbox" value="Historical"/>Historical</label>
+                        <div class="form-check-inline1">
+                            <label class="form-check-inline1"><input type="checkbox" value="Action"/>Action</label>
+                            <label class="form-check-inline1"><input type="checkbox" value="Adventure"/>Adventure</label>
+                            <label class="form-check-inline1"><input type="checkbox" value="Comedy"/>Comedy</label>
+                            <label class="form-check-inline1"><input type="checkbox" value="Crime"/>Crime</label>
+                            <label class="form-check-inline1"><input type="checkbox" value="Drama"/>Drama</label>
+                            <label class="form-check-inline1"><input type="checkbox" value="Fantasy"/>Fantasy</label>
+                            <label class="form-check-inline1"><input type="checkbox" value="Historical"/>Historical</label>
                         </div>
                         <div class="form-check-inline">
                             <label class="form-check-inline"><input type="checkbox" value="Horror"/>Horror</label>
@@ -99,7 +140,15 @@ class AccountSetup extends React.Component{
                 <label for="Disliked_Movies">Movies you like:</label>
                 <input type="text" style={{backgroundColor: "#262626", color: "white"}} class="form-control bg-#262626 col-sm-4" id="Disliked_Movies"/>
             </div>
-            <button class="btn btn-sm btn-block text-white text-center  btn-outline-light col-sm-1" type="submit">Sign up</button>
+            <button class="btn btn-sm btn-block text-white text-center  btn-outline-light col-sm-1" type="submit"
+                    onClick={this.addNewUser(
+                        document.getElementById("Email"),
+                        document.getElementById("Username"),
+                        document.getElementById("Password"),
+                        this.getChecksLiked(),
+                        this.getChecksDisliked(),
+                        document.getElementById("Liked_Movies"),
+                        document.getElementById("Disliked_Movies"))}>Sign up</button>
             </div>
         </body>);
     }

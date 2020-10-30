@@ -59,11 +59,10 @@ export function getGenres(){
 export function addNewUser(email, name, password, likedGenres, dislikedGenres, likedMovies, dislikedMovies){
     db.emailsToInfo[email] = {
         "lists": [],
-        "friends": [],
         "name": name,
         "password": password,
-        "likedGenres": likedGenres,
-        "dislikedGenres": dislikedGenres,
+        "likedGenres": [],
+        "dislikedGenres": [],
         "likedMovies": likedMovies,
         "dislikedMovies": dislikedMovies,
         "friends": [],
