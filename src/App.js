@@ -26,6 +26,7 @@ function App() {
         {bar}
         <Route exact path="/" component={Landing} signInStatus={false}/>
         <Route exact path="/guestcode" component={GuestCode} signInStatus={false}/>
+        <Route exact path="/settings" component={()=>(<AccountSetup signedUp />)}/>
         <Route exact path="/setup" component={AccountSetup}/>
         <Route exact path="/lists" component={AccountLists}/>
         <Route exact path="/homeViewing" component={HomeViewing} />       
