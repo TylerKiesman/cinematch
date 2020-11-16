@@ -17,6 +17,9 @@ feature of viewing movies in real time with another logged in user we found diff
 ## Setup:
 Install Node.JS and import the proper packages needed to run with npm. Then use a command like 'npm start' to run the application.
 
+## How It Works
+After starting the server and being brought to the sign in page you can either act as a guest or sign in. To sign in you can enter any email and password and when you're a guest you can enter any code. Both will then bring you to the home page of our 'admin' test account. From there you can like and dislike movies and add them to lists. If you click on the hamburger menu in the top right you can then go to settings, the home page for viewing movies, your profile, or sign out. In the settings you can see all the different settings for a user account. On the profile page you can click on our preset friend account to view their profile or click on the lists to view your lists and create new ones.
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).<br />
 
